@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class ErrorHandler {
 
     @ExceptionHandler(HttpMediaTypeException.class)
+//    @ExceptionHandler(HttpMediaTypeNotAcceptableException.class) dla HttpMediaTypeNotAcceptableException też zadziała :)
     @ResponseBody
     public ResponseEntity<ErrorResponse> handleHttpMediaTypeException() {
         return ResponseEntity.status(HttpStatus.UNSUPPORTED_MEDIA_TYPE)
